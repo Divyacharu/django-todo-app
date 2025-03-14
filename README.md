@@ -21,12 +21,16 @@ cd todo-project
 ```
 
 ### install dependencies
-`pip install -r requirements.txt`
+```sh
+pip install -r requirements.txt
+```
 
 ### Configure Environment Variables
 To securely use the GitHub Token, set up an environment variable:
+```sh
 set GITHUB_TOKEN=your_personal_access_token
 
+```
 ### Run Database Migrations
 ```sh
 python manage.py migrate
