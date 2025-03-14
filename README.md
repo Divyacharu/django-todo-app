@@ -19,7 +19,7 @@ It supports task creation, completion, deletion, and exporting summaries as GitH
 git clone https://github.com/Divyacharu/django-todo-app.git`
 cd django-todo-app\todo_project
 ```
-# Set Up a Virtual Environment
+### Set Up a Virtual Environment
 ```sh
 python -m venv venv
 
