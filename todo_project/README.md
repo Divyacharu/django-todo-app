@@ -15,9 +15,10 @@ It supports task creation, completion, deletion, and exporting summaries as GitH
 
 
 ###  Clone the Repository
-
-git clone https://github.com/Divyacharu/django-todo-app.git
-`cd todo-project`
+```sh
+git clone https://github.com/Divyacharu/django-todo-app.git`
+cd todo-project
+```
 
 ### install dependencies
 `pip install -r requirements.txt`
