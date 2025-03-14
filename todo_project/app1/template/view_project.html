@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }}</title>
+</head>
+<body>
+    <h2>{{ project.title }}</h2>
+
+    <h3>Summary: 
+        {{ todos_completed }}/{{ todos.count }} todos completed
+    </h3>
+
+    <h3>Pending</h3>
+    <ul>
+        {% for todo in todos %}
+            {% if not todo.completed %}
+                <li>
+                    <input type="checkbox" onclick="window.location.href='{% url 'toggle_todo' todo.id %}'">
+                    {{ todo.task }}
+                </li>
+            {% endif %}
+        {% empty %}
+            <p>No pending tasks.</p>
+        {% endfor %}
+    </ul>
+
+    <h3>Completed</h3>
+    <ul>
+        {% for todo in todos %}
+            {% if todo.completed %}
+                <li>
+                    <input type="checkbox" checked onclick="window.location.href='{% url 'toggle_todo' todo.id %}'">
+                    {{ todo.task }}
+                </li>
+            {% endif %}
+        {% empty %}
+            <p>No completed tasks.</p>
+        {% endfor %}
+    </ul>
+
+    <!-- Add new todo form -->
+    <h3>Add a New Task</h3>
+    <form method="post" action="{% url 'add_todo' project.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Todo</button>
+    </form>
+
+    <br>
+    <a href="{% url 'home' %}">Back to Projects</a>
+</body>
+</html>
