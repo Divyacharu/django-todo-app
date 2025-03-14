@@ -17,7 +17,7 @@ It supports task creation, completion, deletion, and exporting summaries as GitH
 ###  Clone the Repository
 ```sh
 git clone https://github.com/Divyacharu/django-todo-app.git`
-cd todo-project
+cd django-todo-app\todo_project
 ```
 
 ### install dependencies
